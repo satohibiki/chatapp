@@ -17,6 +17,8 @@ def index():
     if request.method == 'GET':
         posts = Post.query.all()
         return render_template("test.html", posts=posts)
+    else:
+        return redirect('/')
 
 @app.route('/create', methods=("GET", "POST"))
 def create():
