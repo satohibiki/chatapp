@@ -1,6 +1,9 @@
-{% extends "base.html" %}
-
-{% block head %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
         *{margin: 0;padding: 0; list-style: none;}
         .wrap{
@@ -31,8 +34,13 @@
             left: 5vw;
         }
     </style>
-{% endblock %}
-{% block body %}
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark p-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/" style="font-size: 1.5rem;">簡易チャット</a>
+        </div>
+    </nav>
     <div class="wrap">
         <ul>
             {% for post in posts %}
@@ -45,5 +53,5 @@
     <div>
         <a class="btn btn-primary m-5" href="/create" role="button">投稿</a>
     </div>
-
-{% endblock %}
+</body>
+</html>
