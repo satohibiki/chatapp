@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <style type="text/css">
+        *{margin: 0;padding: 0; list-style: none;}
+        .wrap{
+            width: 600px;
+            margin: 0 auto;
+            padding: 20px 0 100px 0;
+            background: #e6e6fa;
+            min-height: 100vh;
+        }
+        li{
+            position: relative;
+            padding: 10px 20px;
+            margin: 0 10px 10px 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        span{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            font-size: 12px;
+            color: #ccc;
+        }
+        form{
+            position: fixed;
+            top: 10%;
+            left: 5vw;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="wrap">
+        <ul>
+            {% for post in posts %}
+
+                <li>{{post.text}}<span>{{post.due}}</span></li>
+    
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <a class="btn btn-primary m-5" href="/create" role="button">投稿</a>
+    </div>
+
+{% endblock %}
