@@ -2,6 +2,7 @@ from datetime import datetime, date
 
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+import pytz
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///chatapp.db"
@@ -24,7 +25,7 @@ def index():
 def create():
     if request.method == 'POST':
         text = request.form.get("text")
-        due = datetime.now()
+        due = datetime.now(pytz.timezone('Asia/Tokyo'))
 
         due = due.strftime("%Y-%m-%d %H:%M")
 
