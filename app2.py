@@ -14,11 +14,11 @@ class Post(db.Model):
 
 @app.route('/', methods=('GET', 'POST'))
 def index():
-    if request.method == 'POST':
+    if request.method == 'GET':
         posts = Post.query.all()
         return render_template("test.html", posts=posts)
     else:
-        return redirect('/')
+        return redirect('/static/css/bootstrap.min.css')
 
 @app.route('/create', methods=("GET", "POST"))
 def create():
