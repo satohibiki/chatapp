@@ -12,7 +12,7 @@ class Post(db.Model):
     text = db.Column(db.String(140))
     due = db.Column(db.String(30))
 
-@app.route('/', methods=('GET', 'POST'))
+@app.route('/static/css/bootstrap.min.css', methods=('GET', 'POST'))
 def index():
     if request.method == 'GET':
         posts = Post.query.all()
