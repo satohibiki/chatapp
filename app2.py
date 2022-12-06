@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 import pytz
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///chatapp.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://satoki:password@localhost:8080/mydatabase"
 db = SQLAlchemy(app)
 
 class Post(db.Model):
